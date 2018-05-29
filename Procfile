@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp "target/dependency/*" webapp.runner.launch.Main --port $PORT target/*.war
+web: java -cp "target/dependency/*" $JAVA_OPTS -DDB_URL=$JDBC_DATABASE_URL webapp.runner.launch.Main --enable-naming --context-xml src/main/webapp/META-INF/contextheroku.xml --port $PORT target/*.war
