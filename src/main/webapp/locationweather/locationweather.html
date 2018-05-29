@@ -1,0 +1,122 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API tester</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../assest/locationweather.css">
+</head>
+<body>
+<div id="frame">
+	<div class="container">
+
+	    <div id="myLocation">
+	    	<div class="weatherDiv"><h4>Mijn Locatie</h4></div>
+	        <div>
+	        	<label for="code">Landcode: </label>
+	        	<span id="code"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Land: </label>
+	        	<span id="land"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Regio: </label>
+	        	<span id="regio"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Stad: </label>
+	        	<span id="stad"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Postcode: </label>
+	        	<span id="postcode"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Latitude: </label>
+	        	<span id="lat"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Longitude: </label>
+	        	<span id="long"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>IP: </label>
+	        	<span id="ip"></span>
+	        </div>
+	    </div>
+	    <div id="weatherInfo">
+	        <div class="weatherDiv">
+	        		<h4 id="weatherCity">Het weer in </h4>
+	        		<span id="weatherFlag" class="flag-icon"></span>
+	        </div>
+	        <div id="icon"></div>
+	    	<div>
+	        	<label>Temperatuur: </label>
+	        	<span id="temp"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Luchtvochtigheid: </label>
+	        	<span id="vocht"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Windshelheid: </label>
+	        	<span id="snelheid"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Windrichting: </label>
+	        	<span id="richting"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Zonsopgang: </label>
+	        	<span id="opgang"></span>
+	        </div>
+	        
+	        <div>
+	        	<label>Zonsondergang: </label>
+	        	<span id="ondergang"></span>
+	        </div>
+	    
+	    </div>
+	</div>
+    <div id="countryList">
+        <div  class="weatherDiv">
+            <h4>Beschikbare vakantiebestemmingen</h4>
+        </div>
+        <div id="search">
+     		<input placeholder="zoeken..." id="searchInput">
+        </div>
+
+        <div id="tableDiv">
+	        <table id="countryTable">
+		        <tbody id="countryBody">
+		            <tr>
+		                <th id="name">Land</th>
+		                <th id="capital">Hoofdstad</th>
+		                <th id="region">Regio</th>
+		                <th id="surface">Oppervlakte</th>
+		                <th id="population">Inwoners</th>
+		            </tr>
+		        </tbody>
+	        </table>
+        </div>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src=../assest/locationweather.js></script>
+</body>
+</html>

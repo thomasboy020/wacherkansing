@@ -1,0 +1,21 @@
+#rekenmachine { 
+	background-color: green;
+      margin: 12px;
+      padding: 8px;
+      text-align: center;
+      width: 200px;
+}
+
+#display { 
+	background-color: white;
+    height: 20px;
+    margin: 8px;
+    padding-right: 8px;
+    text-align: right;
+}
+
+button { 
+	height: 45px;
+	margin-bottom: 5px;
+	width: 45px;
+}

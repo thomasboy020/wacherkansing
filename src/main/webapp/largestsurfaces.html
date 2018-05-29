@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Largestsurfaces</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+    $(document).ready(loadLargestSurfaces());
+
+    function loadLargestSurfaces() {
+        $.ajax({
+            url: "restservices/countries/largestsurfaces",
+            type: "GET",
+            contentType: "application/json",
+            beforeSend: function (xhr) {
+                var token = window.sessionStorage.getItem("sessionToken");
+                xhr.setRequestHeader("Authorization", "Bearer " + token);
+            },
+            success: function (result) {
+                $('html').text(JSON.stringify(result))
+            },
+            error: function (data) {
+                console.clear();
+                console.log(data)
+            }
+        });
+    }
+</script>
+</body>
+</html>

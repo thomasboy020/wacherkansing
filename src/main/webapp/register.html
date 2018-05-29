@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form id="registerForm" method="post">
+
+    <input name="username" id="username" type="text" placeholder="username">
+    <input name="password" type="password" id="password" placeholder="password">
+    <input name="password_confirmation" type="password" id="password_confirmation" placeholder="password confirmation">
+    <button type="submit">Register</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+$("#registerForm").on("submit", function(e) {
+  e.preventDefault();
+  $.post({
+    url: "/restservices/authentication/register",
+    data: $(this).serialize(),
+    success: function(data) {
+      sessionStorage.setItem("sessionToken", data);
+    }
+  });
+});
+</script>
+</body>
+</html>

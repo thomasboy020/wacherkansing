@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Country View</title>
+    <link rel="stylesheet" type="text/css" href="../assest/country.css">
+</head>
+<body>
+<div id="frame">
+    <div id="countryList">
+        <div  class="weatherDiv">
+            <h4>Alle Landen</h4>
+            <span id="add_country"> <button>add country</button></span>
+
+        </div>
+        <div id="search">
+
+     		<input placeholder="zoeken..." id="searchInput">
+        </div>
+
+        <div id="tableDiv">
+	        <table id="countryTable">
+		        <tbody id="countryBody">
+		            <tr>
+						<th id="codeT">Code</th>
+		                <th id="nameT">Land</th>
+		                <th id="capitalT">Hoofdstad</th>
+		                <th id="regionT">Regio</th>
+                        <th id="deleteT"></th>
+		            </tr>
+		        </tbody>
+	        </table>
+        </div>
+
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span id="close">&times;</span>
+        <div id="inputContainer">
+            <div class="inputRow">
+                <div>
+                    <label for="code3">Code (3): </label>
+                    <input id="code3" type="text" class="inputField">
+                </div>
+                <div>
+                    <label for="name">Name: </label>
+                    <input id="name" type="text" class="inputField">
+                </div>
+                <div>
+                    <label for="continent">Continent: </label>
+                    <input id="continent" type="text" class="inputField">
+                </div>
+                <div>
+                    <label for="region">Region: </label>
+                    <input id="region" type="text" class="inputField">
+                </div>
+                <div>
+                    <label for="surface">Surface: </label>
+                    <input id="surface" type="number" class="inputField">
+                </div>
+                <div>
+                    <label for="population">Population: </label>
+                    <input id="population" type="number" class="inputField">
+                </div>
+            </div>
+            <div class="inputRow">
+                <div>
+                    <label for="government">Government: </label>
+                    <input id="government" type="text" class="inputField">
+                </div>
+                <div>
+                    <label for="code">Code (2): </label>
+                    <input id="code" type="text" class="inputField">
+                </div>
+                <div>
+                    <label for="capital">Capital: </label>
+                    <input id="capital" type="text" class="inputField">
+                </div>
+                <div>
+                    <label for="latitude">Latitude: </label>
+                    <input id="latitude" type="number" class="inputField">
+                </div>
+                <div>
+                    <label for="longitude">Longitude: </label>
+                    <input id="longitude" type="number" class="inputField">
+                </div>
+            </div>
+            <div>
+                <button id="cancel">cancel</button>
+                <button id="save">save</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src=../assest/country.js></script>
+</body>
+</html>
