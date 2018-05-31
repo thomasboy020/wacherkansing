@@ -5,26 +5,28 @@
     <title>Login</title>
 </head>
 <body>
-<form id="loginForm" method="post">
-
-    <input name="username" id="username" type="text" placeholder="username">
-    <input name="password" type="password" id="password" placeholder="password">
-    <button id="login" type="submit">Login</button>
+<form id="loginform">
+  <input type="text" name="username" />
+  <input type="password" name="password" />
+  <input type="button" value="login" id="login" />
 </form>
+
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
-$("#login").click(function(event) {
-	  var data = $("#loginform").serialize();
+function login(event) {
+	  var formData = new FormData(document.querySelector("#loginform"));
+	  var encData = new URLSearchParams(formData.entries());
 
-	  $.post("https://wacherkansing.herokuapp.com/herkansing/restservices/authentication", data, function(response) {
-	    window.sessionStorage.setItem("sessionToken", response);
-	    window.location.replace("manageCountries.html");
+	  fetch("restservices/authentication", { method: 'POST', body: encData })
+	    .then(function(response) {
+	      if (response.ok) return response.json();
+	      else throw "Wrong username/password";
+	    })
+	    .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
+	    .catch(error => console.log(error));
+	}
+	document.querySelector("#login").addEventListener("click", login);
 
-	  }).fail(function(jqXHR, textStatus, errorThrown) {
-	    console.log(textStatus);
-	    console.log(errorThrown);
-	  });
-	});
 </script>
 </body>
 </html>
