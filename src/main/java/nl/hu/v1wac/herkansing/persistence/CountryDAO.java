@@ -51,11 +51,13 @@ public class CountryDAO extends BaseDAO {
     }
 
     public List<Country> find10LargestPopulations() {
-        return selectCountries("SELECT * FROM country ORDER BY population DESC LIMIT 10");
+    	List<Country> countries = selectCountries("SELECT * FROM country ORDER BY population DESC LIMIT 10");
+    	return countries;
     }
 
     public List<Country> find10LargestSurfaces() {
-        return selectCountries("SELECT * FROM country ORDER BY surfacearea DESC LIMIT 10");
+    	List<Country> countries =  selectCountries("SELECT * FROM country ORDER BY surfacearea DESC LIMIT 10");
+    	return countries;
     }
 
     public Country update(Country country) {
