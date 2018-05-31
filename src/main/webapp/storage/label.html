@@ -10,13 +10,7 @@
 <label id="storagelabel"></label>
 
 <script>
-(function() {
-	window.addEventListener('storage', function (event) {
-		  if (event.key === 'textfield') {
-		    document.getElementById('storagelabel').innerHTML = event.newValue;
-		  }
-		});
-	})();
+
 function toeter() {
 document.getElementById('storagelabel').innerHTML = localStorage.getItem('textfield');
 }   

@@ -13,24 +13,18 @@
 </form>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
-$('#login').click(function(event){
-	var uri = "https://wacherkansing.herokuapp.com/restservices/authentication";
-	 $.ajax(uri, {
-	        type: "POST",
-          data: $("#loginForm").serialize(),
-	        success: function(response) {
-        		var tokenAndId = JSON.parse(response);
-        		window.sessionStorage.setItem("sessionToken", tokenAndId.token);
-        		window.sessionStorage.setItem("id", tokenAndId.id);
-            window.sessionStorage.setItem("role", tokenAndId.role);
-            window.location.replace("https://wacherkansing.herokuapp.com");
-          },
-	        error: function(response) {
-            console.log("Try logging in again");
-            $("#wrongLogin").html("Wrong password email combination");
-	        }
-	    });
-    });
+$("#login").click(function(event) {
+	  var data = $("#loginform").serialize();
+
+	  $.post("https://wacherkansing.herokuapp.com/herkansing/restservices/authentication", data, function(response) {
+	    window.sessionStorage.setItem("sessionToken", response);
+	    window.location.replace("manageCountries.html");
+
+	  }).fail(function(jqXHR, textStatus, errorThrown) {
+	    console.log(textStatus);
+	    console.log(errorThrown);
+	  });
+	});
 </script>
 </body>
 </html>
