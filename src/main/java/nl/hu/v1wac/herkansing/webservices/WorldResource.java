@@ -92,6 +92,7 @@ public class WorldResource {
     }
 
     @DELETE
+    @RolesAllowed("admin")
     @Path("/{code}")
     public Response deleteCountry(@PathParam("code") String code) {
         System.out.println(code);
