@@ -10,13 +10,15 @@
 <label id="storagelabel"></label>
 
 <script>
-function() {
+(function() {
 	window.addEventListener('storage', function (event) {
 		  if (event.key === 'textfield') {
 		    document.getElementById('storagelabel').innerHTML = event.newValue;
 		  }
 		});
 	})();
+	
+document.getElementById('storagelabel').innerHTML = localstorage.key(8);
     
 </script>
 </body>
