@@ -269,7 +269,7 @@ function updateCountry() {
                 }
             }
 
-            found.parentNode.innerHTML =
+            found.innerHTML =
                 "<td class='code_row'>" +
                 object.code +
                 "</td>" +
