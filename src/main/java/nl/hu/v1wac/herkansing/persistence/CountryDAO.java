@@ -54,37 +54,7 @@ public class CountryDAO extends BaseDAO {
     	List<Country> countries = selectCountries("SELECT * FROM country ORDER BY population DESC LIMIT 10");
     	return countries;
     }
-    
-//    public List<Country> find10LargestPopulations() {
-//		List<Country> countries = null;
-//		try {
-//			Connection myConn = super.getConnection();
-//
-//			PreparedStatement pstmt = myConn.prepareStatement("SELECT * FROM country ORDER BY population DESC LIMIT 10");
-//			pstmt.executeQuery();
-//
-//			ResultSet dbResultSet = pstmt.getResultSet();
-//
-//			while (dbResultSet.next()) {
-//				String iso2Code = dbResultSet.getString("code2");
-//                String iso3Code = dbResultSet.getString("code");
-//                String name = dbResultSet.getString("name");
-//                String capital = dbResultSet.getString("capital");
-//                String continent = dbResultSet.getString("continent");
-//                String region = dbResultSet.getString("region");
-//                double surface = dbResultSet.getDouble("surfacearea");
-//                int population = dbResultSet.getInt("population");
-//                String government = dbResultSet.getString("governmentform");
-//                double latitude = dbResultSet.getDouble("latitude");
-//                double longitude = dbResultSet.getDouble("longitude");
-//
-//                countries.add(new Country(iso2Code, iso3Code, name, capital, continent, region, surface, population, government, latitude, longitude));
-//			}
-//		} catch (Exception exc) {
-//			exc.printStackTrace();
-//		}
-//		return countries;
-//	}
+    	
 
     public List<Country> find10LargestSurfaces() {
     	List<Country> countries =  selectCountries("SELECT * FROM country ORDER BY surfacearea DESC LIMIT 10");

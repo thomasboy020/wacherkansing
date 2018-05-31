@@ -62,7 +62,6 @@ public class WorldResource {
             JsonObjectBuilder job = createModelObject(c);
             jab.add(job);
         }
-        System.console().writer().println(jab);
         return jab.build().toString();
     }
 
