@@ -10,7 +10,7 @@
 <label id="storagelabel"></label>
 
 <script>
-(function() {
+function() {
 	window.addEventListener('storage', function (event) {
 		  if (event.key === 'textfield') {
 		    document.getElementById('storagelabel').innerHTML = event.newValue;

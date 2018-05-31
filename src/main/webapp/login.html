@@ -23,7 +23,6 @@ $('#login').click(function(event){
         		window.sessionStorage.setItem("sessionToken", tokenAndId.token);
         		window.sessionStorage.setItem("id", tokenAndId.id);
             window.sessionStorage.setItem("role", tokenAndId.role);
-            console.log(tokenAndId.token);
             window.location.replace("https://wacherkansing.herokuapp.com");
           },
 	        error: function(response) {
