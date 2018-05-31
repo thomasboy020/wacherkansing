@@ -42,7 +42,6 @@ public class WorldResource {
     }
 
     @PUT
-    @RolesAllowed("admin")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateCountry(String json) {
         System.out.println(json);
@@ -54,7 +53,6 @@ public class WorldResource {
 
 
     @GET
-    @RolesAllowed("admin")
     @Path("/largestsurfaces")
     @Produces(MediaType.APPLICATION_JSON)
     public String getLargestSurfaces() {
@@ -64,7 +62,7 @@ public class WorldResource {
             JsonObjectBuilder job = createModelObject(c);
             jab.add(job);
         }
-
+        System.console().writer().println(jab);
         return jab.build().toString();
     }
 
@@ -95,7 +93,6 @@ public class WorldResource {
     }
 
     @DELETE
-    @RolesAllowed("admin")
     @Path("/{code}")
     public Response deleteCountry(@PathParam("code") String code) {
         System.out.println(code);
