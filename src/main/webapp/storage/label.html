@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body onload="toeter()">
 <label id="storagelabel"></label>
 
 <script>
@@ -17,9 +17,9 @@
 		  }
 		});
 	})();
-	
-document.getElementById('storagelabel').innerHTML = localstorage.getItem('textfield');
-    
+function toeter() {
+document.getElementById('storagelabel').innerHTML = localStorage.getItem('textfield');
+}   
 </script>
 </body>
 </html>
