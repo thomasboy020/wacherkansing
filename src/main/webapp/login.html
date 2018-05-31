@@ -15,12 +15,9 @@
 <script>
     $("#loginForm").on("submit", function (e) {
         e.preventDefault();
-        $.post({
-            url: "restservices/authentication",
-            data: $(this).serialize(),
-            success: function (data) {
-                sessionStorage.setItem("sessionToken", data);
-            }
+        $.post("http://localhost:4711/herkansing/restservices/authentication", data, function(response) {
+            window.sessionStorage.setItem("sessionToken", response);
+            window.location.replace("manageCountries.html");
         });
     });
 </script>
