@@ -13,20 +13,24 @@
 
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
-function login(event) {
-	  var formData = new FormData(document.querySelector("#loginform"));
-	  var encData = new URLSearchParams(formData.entries());
-
-	  fetch("restservices/authentication", { method: 'POST', body: encData })
-	    .then(function(response) {
-	      if (response.ok) return response.json();
-	      else throw "Wrong username/password";
-	    })
-	    .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
-	    .catch(error => console.log(error));
-	}
-	document.querySelector("#login").addEventListener("click", login);
-
+$('#login').click(function(event){
+	var uri = "https://wacherkansing.herokuapp.com/herkansing/restservices/authentication/authenticate";
+	 $.ajax(uri, {
+	        type: "POST",
+          data: $("#loginForm").serialize(),
+	        success: function(response) {
+        		var tokenAndId = JSON.parse(response);
+        		window.sessionStorage.setItem("sessionToken", tokenAndId.token);
+        		window.sessionStorage.setItem("id", tokenAndId.id);
+            window.sessionStorage.setItem("role", tokenAndId.role);
+            window.location.replace("https://wacherkansing.herokuapp.com");
+          },
+	        error: function(response) {
+            console.log("Try logging in again");
+            $("#wrongLogin").html("Wrong password email combination");
+	        }
+	    });
+    });
 </script>
 </body>
 </html>
