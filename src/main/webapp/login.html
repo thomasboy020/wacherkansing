@@ -14,7 +14,7 @@
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
 $('#login').click(function(event){
-	var uri = "https://wacherkansing.herokuapp.com/herkansing/restservices/authentication";
+	var uri = "https://wacherkansing.herokuapp.com/restservices/authentication";
 	 $.ajax(uri, {
 	        type: "POST",
           data: $("#loginForm").serialize(),
