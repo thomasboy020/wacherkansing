@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class UserDAO extends BaseDAO {
     public String findRoleForUsernameAndPassword(String username, String password) {
         String role = null;
-        String query = "SELECT role FROM users WHERE username = ? AND password = ?";
+        String query = "SELECT role FROM useraccount WHERE username = ? AND password = ?";
 
         try (Connection con = super.getConnection()) {
 
@@ -28,7 +28,7 @@ public class UserDAO extends BaseDAO {
     }
 
     public boolean registerUser(String username, String password, String role) {
-        String query = "INSERT INTO users (username, password, role) VALUES(?,?,?)";
+        String query = "INSERT INTO useraccount (username, password, role) VALUES(?,?,?)";
 
         try (Connection con = super.getConnection()) {
             PreparedStatement stmt = con.prepareStatement(query);
